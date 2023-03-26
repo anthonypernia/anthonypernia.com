@@ -1,0 +1,64 @@
+@import '@styles/Variables.module.scss';
+
+.AboutContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    min-height: 70vh;
+    background: $gradient_0;
+
+}
+
+.AboutItemContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    height: 100%;
+    @media screen and (max-width: 768px) {
+        flex-direction: column-reverse;
+        padding-top: 1rem;
+        width: $width_all;
+      }
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        width: $width_three_quarters;
+        padding-left: 1rem;
+        border-left: 5px solid rgb(0, 0, 0);
+      }
+}
+
+
+.AboutTextContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $width_half;
+    p {
+        color: rgb(0, 0, 0);
+        margin: 0.2rem;
+        font-size: 1rem;
+        font-weight: $text_3_weight;
+        user-select: none;
+        font-style: italic;
+        
+    }
+    h2{
+        color: rgb(0, 0, 0);
+        margin: 0.2rem;
+        font-size: 2rem;
+        font-weight: $text_4_weight;
+        user-select: none;
+    }
+}
+
+.AboutImageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: $width_half;
+}
