@@ -1,4 +1,4 @@
-name: Build Next.js app and move to another branch
+name: Build and deploy to gh-pages
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,25 +24,10 @@ jobs:
       - name: Build Next.js app
         run: npm run build
 
-      - name: Checkout the destination branch
-        uses: actions/checkout@v2
+      - name: Deploy to gh-pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          ref: gh-pages
-          fetch-depth: 0
-
-      - name: Move built app to destination branch
-        run: |
-          mkdir -p dest-directory
-          cp -R out/. dest-directory/
-        working-directory: ${{ github.workspace }}
-
-      - name: Commit and push changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: Github Actions
-          author_email: actions@github.com
-          message: 'Built Next.js app and moved to destination branch'
-          add: '.'
-          push: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
+          publish_branch: gh-pages
+          publish_dir_name: build
