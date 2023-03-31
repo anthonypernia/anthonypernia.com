@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   width: $width_all;
-  height: 80vh;
+  height: 100vh;
   background: $gradient_1;
 }
 
@@ -15,17 +15,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  width: $width_all;
   margin: 1rem;
   .CarouselTitle {
     font-size: 2rem;
     font-weight: $text_4_weight;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
+    user-select: none;
+  }
+  .CarouselSubtitle {
+    font-size: 1rem;
+    font-weight: $text_3_weight;
+    margin-bottom: 1rem;
     user-select: none;
   }
 }
 
 .CarouselContainer {
-  overflow-x: scroll;
+  overflow-x: hidden;
   white-space: nowrap;
   @media screen and (max-width: 768px) {
     width: $width_all;

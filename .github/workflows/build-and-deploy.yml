@@ -1,0 +1,48 @@
+name: Build Next.js app and move to another branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Next.js app
+        run: npm run build
+
+      - name: Checkout the destination branch
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          fetch-depth: 0
+
+      - name: Move built app to destination branch
+        run: |
+          mkdir -p dest-directory
+          cp -R out/. dest-directory/
+        working-directory: ${{ github.workspace }}
+
+      - name: Commit and push changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Github Actions
+          author_email: actions@github.com
+          message: 'Built Next.js app and moved to destination branch'
+          add: '.'
+          push: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
