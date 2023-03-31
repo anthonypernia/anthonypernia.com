@@ -3,6 +3,7 @@ import GithubImage from '@assets/icons/github-dark.png'
 import LinkedinImage from '@assets/icons/linkedin-dark.png'
 import TwitterImage from '@assets/icons/twitter-dark.png'
 import InstagramImage from '@assets/icons/instagram-dark.png'
+import YoutubeImage from '@assets/icons/youtube-dark.png'
 import Image from 'next/image';
 
 const Contact = () => {
@@ -23,12 +24,16 @@ const Contact = () => {
         {
             icon: InstagramImage,
             url: 'https://www.instagram.com/anthonyperniah/'
+        },
+        {
+            icon: YoutubeImage,
+            url: 'https://www.youtube.com/@anthonypernia'
         }
     ]
 
 
     return (
-        <div className={styles.ContactContainer}>
+        <div className={styles.ContactContainer} id="CONTACT">
         <h2>Contact</h2>
         <p>Feel free to reach out to me on any of the platforms below.</p>
         <div className={styles.ContactIcons}>

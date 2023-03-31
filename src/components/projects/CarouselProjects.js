@@ -9,7 +9,7 @@ const CarouselProjects = () => {
   const [projects, setProjects] = useState([]);
 
   const getProjectsFromApi = async () => {
-    const res = await fetch("https://api.github.com/search/repositories?q=topic:portfolio-anthony+user:anthonypernia&sort=updated&order=desc");
+    const res = await fetch("https://api.github.com/search/repositories?q=topic:portfolio+user:anthonypernia&sort=updated&order=desc");
     const data = await res.json();
     saveProjectsInLocalStorage(data.items);
   };
@@ -60,7 +60,7 @@ const CarouselProjects = () => {
   };
 
   return (
-    <div className={styles.CarouselMainContainer}>
+    <div className={styles.CarouselMainContainer} id="PROJECTS">
       <div className={styles.CarouselTitleContainer}>
         <h2 className={styles.CarouselTitle}>Projects</h2>
       </div>

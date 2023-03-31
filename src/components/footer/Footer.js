@@ -5,30 +5,35 @@ import GithubImage from '@assets/icons/github.png'
 import LinkedinImage from '@assets/icons/linkedin.png'
 import TwitterImage from '@assets/icons/twitter.png'
 import InstagramImage from '@assets/icons/instagram.png'
-
+import YoutubeImage from '@assets/icons/youtube.png'
 
 const Footer = () => {
 
     const socialMedia = [
         {
             name: 'GitHub',
-            url: '',
+            url: 'https://github.com/anthonypernia',
             icon: GithubImage
         },
         {
             name: 'Linkedin',
-            url: '',
+            url: 'https://www.linkedin.com/in/anthonypernia/',
             icon:  LinkedinImage
         },
         {
             name: 'Twitter',
-            url: '',
+            url: 'https://twitter.com/AnthonyPerniaH',
             icon: TwitterImage
         },
         {
             name: 'Instagram',
-            url: '',
+            url: 'https://www.instagram.com/anthonyperniah/',
             icon: InstagramImage
+        },
+        {
+            name: 'Youtube',
+            url: 'https://www.youtube.com/@anthonypernia',
+            icon: YoutubeImage
         }
     ]
 
