@@ -1,6 +1,5 @@
 import  NavBar  from '@components/navbar/NavBar'
 import Meta from '@components/head/Head';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import MainPage from '@components/main-page/MainPage';
 import Footer from '@components/footer/Footer';
 import About from '@components/about/About';
