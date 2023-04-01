@@ -2,14 +2,18 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import styles from "./CarouselProjects.module.scss";
 import Card from "./Card";
+import { PageContext } from '@context/ContextPage';
+import { useContext } from 'react';
+
 
 const CarouselProjects = () => {
+  const { urlRepo } = useContext(PageContext);
   const [scrollPosition, setScrollPosition] = useState(0);
   const carouselRef = useRef(null);
   const [projects, setProjects] = useState([]);
 
   const getProjectsFromApi = async () => {
-    const res = await fetch("https://api.github.com/search/repositories?q=topic:portfolio-anthony+user:anthonypernia&sort=updated&order=desc");
+    const res = await fetch(urlRepo);
     const data = await res.json();
     saveProjectsInLocalStorage(data.items);
   };
@@ -46,9 +50,47 @@ const CarouselProjects = () => {
     }
   };
 
+  const activateGestures = () => {
+    if (typeof window !== 'undefined') {
+      const Hammer = require('hammerjs');
+      const container = carouselRef.current;
+      const hammer = new Hammer(container, { touchAction: 'pan-x' });
+
+      let startX = 0;
+      let scrollLeft = 0;
+
+      hammer.on('panstart', (event) => {
+        console.log(event);
+        startX = event.changedPointers[0].clientX;
+        scrollLeft = container.scrollLeft;
+      });
+
+      hammer.on('panmove', (event) => {
+        console.log(event);
+        const diffX = event.changedPointers[0].clientX - startX;
+        container.scrollLeft = scrollLeft - diffX;
+      });
+    }
+  }
+
 
   useEffect(() => {
     getProjects();
+    activateGestures();
+    // const container = carouselRef.current;
+    // const hammer = new Hammer(container, { touchAction: 'pan-x' });
+    // let startX = 0;
+    // let scrollLeft = 0;
+    // hammer.on('panstart', (event) => {
+    //   startX = event.changedPointers[0].clientX;
+    //   scrollLeft = container.scrollLeft;
+    // });
+
+    // hammer.on('panmove', (event) => {
+    //   const diffX = event.changedPointers[0].clientX - startX;
+    //   container.scrollLeft = scrollLeft - diffX;
+    // });
+
   }, []);
 
 

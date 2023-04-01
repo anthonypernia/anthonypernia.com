@@ -6,37 +6,11 @@ import LinkedinImage from '@assets/icons/linkedin.png'
 import TwitterImage from '@assets/icons/twitter.png'
 import InstagramImage from '@assets/icons/instagram.png'
 import YoutubeImage from '@assets/icons/youtube.png'
+import { PageContext } from '@context/ContextPage';
+import { useContext } from 'react';
 
 const Footer = () => {
-
-    const socialMedia = [
-        {
-            name: 'GitHub',
-            url: 'https://github.com/anthonypernia',
-            icon: GithubImage
-        },
-        {
-            name: 'Linkedin',
-            url: 'https://www.linkedin.com/in/anthonypernia/',
-            icon:  LinkedinImage
-        },
-        {
-            name: 'Twitter',
-            url: 'https://twitter.com/AnthonyPerniaH',
-            icon: TwitterImage
-        },
-        {
-            name: 'Instagram',
-            url: 'https://www.instagram.com/anthonyperniah/',
-            icon: InstagramImage
-        },
-        {
-            name: 'Youtube',
-            url: 'https://www.youtube.com/@anthonypernia',
-            icon: YoutubeImage
-        }
-    ]
-
+    const { socialMedia } = useContext(PageContext);
 
     return (
         <footer id="footer" className={styles.Footer}>

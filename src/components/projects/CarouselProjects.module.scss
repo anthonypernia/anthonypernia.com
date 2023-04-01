@@ -34,7 +34,7 @@
 }
 
 .CarouselContainer {
-  overflow-x: hidden;
+  overflow-x: scroll;
   white-space: nowrap;
   @media screen and (max-width: 768px) {
     width: $width_all;

@@ -1,8 +1,13 @@
-// pages/_app.js
+import ContextPage from "@context/ContextPage"
 
+function AnthonyApp({ Component, pageProps }) {
+  return(
+    <>
+    <ContextPage>
+      <Component {...pageProps} />
+    </ContextPage>
+    </>
+  )
+}
 
-
-
-export default function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
-  }
+export default AnthonyApp
