@@ -2,8 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   compress: true,
-  
-
+  distDir: 'build',
 }
 
 module.exports = nextConfig
