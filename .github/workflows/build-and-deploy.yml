@@ -19,10 +19,12 @@ jobs:
           npm run build
 
       - name: Deploy to GitHub Pages from nextjs  🚀
-        uses: JamesIves/github-pages-deploy-action@releases/v3
+        uses: JamesIves/github-pages-deploy-action@releases/v4
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: build # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+          branch: gh-pages # The branch the action should deploy to.
+          folder: out # The folder the action should deploy.
+          clean: true # Automatically remove deleted files from the deploy branch
+          token: ${{ secrets.GITHUB_TOKEN }} # The token used to authenticate with the repository.
+          keep-history: true # Optional: Keep the git history and avoid force pushes (required for protected branches).
+          commit-message: "Deploy to GitHub Pages from nextjs" # Optional: The commit message for the deployment.
           
