@@ -14,7 +14,7 @@ import YoutubeImageLight from '@assets/icons/youtube.png'
 export const PageContext = createContext();
 
 const ContextPage = ({ children }) => {
-    const [urlRepo , setUrlRepo] = useState("https://api.github.com/search/repositories?q=topic:portfolio-anthony+user:anthonypernia&sort=updated&order=desc");
+    const [urlRepo , setUrlRepo] = useState("https://api.github.com/search/repositories?q=topic:portfolio+user:anthonypernia&sort=updated&order=desc");
     const [ socialMedia, setSocialMedia ] = useState([
         {
             iconLight: GithubImageLight,
