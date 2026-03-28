@@ -1,0 +1,192 @@
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.70rem;
+  font-weight: 300;
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  margin-bottom: 2.5rem;
+  transition: color 0.2s;
+}
+.back:hover { color: var(--ink); }
+.back .arrow {
+  font-size: 0.65rem;
+  transition: transform 0.2s;
+}
+.back:hover .arrow { transform: translateX(-2px); }
+
+.article-hero {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.article-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-meta {
+  margin-bottom: 2.5rem;
+}
+
+.article-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.article-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.article-tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.60rem;
+  color: var(--muted);
+  border: 1px solid var(--dim);
+  padding: 0.15rem 0.45rem;
+  letter-spacing: 0.04em;
+}
+
+.article-body {
+  border-top: 1px solid var(--line);
+  padding-top: 2rem;
+}
+
+.article-body p {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--statement);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.article-body h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin: 2rem 0 0.75rem;
+}
+
+.article-body blockquote {
+  border-left: 1px solid var(--dim);
+  padding-left: 1rem;
+  margin: 1.5rem 0;
+}
+
+.article-body blockquote p {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+/* Writing index styles */
+
+.writing-header {
+  margin-bottom: 3rem;
+}
+
+.page-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 1.45rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  color: var(--role);
+  letter-spacing: 0.04em;
+}
+
+.post-list {
+  list-style: none;
+}
+
+.post-item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.post-item:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.post-thumb {
+  width: 100%;
+  aspect-ratio: 3 / 1;
+  overflow: hidden;
+  margin-bottom: 0.85rem;
+  border: 1px solid var(--line);
+}
+
+.post-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.post-date {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.post-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  display: block;
+  margin-bottom: 0.4rem;
+  transition: color 0.2s;
+}
+
+.post-title:hover { color: var(--ink); }
+
+.post-excerpt {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.post-tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.60rem;
+  color: var(--muted);
+  border: 1px solid var(--dim);
+  padding: 0.15rem 0.45rem;
+  margin-top: 0.7rem;
+  letter-spacing: 0.04em;
+}

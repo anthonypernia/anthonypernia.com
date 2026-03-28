@@ -290,5 +290,16 @@ dist
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-venv
-venv/*
+# Python
+venv/
+
+# local scripts
+convert.py
+
+# Jekyll
+_site/
+.jekyll-cache/
+Gemfile.lock
+
+# macOS
+.DS_Store
