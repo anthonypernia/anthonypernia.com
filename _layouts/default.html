@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+<body id="top">
+
+{{ content }}
+
+  <footer>
+    <span>© <span id="footer-year">2026</span> Anthony Pernia</span>
+    <button type="button" id="theme-toggle">Light</button>
+    <a href="#top">Back to top<span aria-hidden="true">↑</span></a>
+  </footer>
+
+  <script src="{{ '/script.js' | relative_url }}"></script>
+</body>
+</html>

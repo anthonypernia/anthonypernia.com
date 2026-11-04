@@ -1,0 +1,31 @@
+---
+layout: default
+title: "Writing"
+description: "Articles on data platform engineering, architecture, and technical leadership by Anthony Pernia."
+css: true
+---
+<div class="card">
+    <div class="writing-header">
+      <a href="{{ '/' | relative_url }}" class="back"><span class="arrow" aria-hidden="true">←</span> Anthony Pernia</a>
+      <h1 class="page-title">Writing</h1>
+    </div>
+
+    {% assign articles = site.pages | where: "section", "writing" | sort: "date" | reverse %}
+    {% if articles.size > 0 %}
+    <ul class="post-list">
+      {% for article in articles %}
+      <li class="post-item">
+        {%- if article.hero %}
+        <div class="post-thumb"><img src="{{ article.hero | relative_url }}" alt="" loading="lazy" /></div>
+        {%- endif %}
+        <p class="post-date">{{ article.date_display }}</p>
+        <a href="{{ article.url | relative_url }}" class="post-title">{{ article.title }}</a>
+        <p class="post-excerpt">{{ article.excerpt | default: article.description }}</p>
+        <span class="post-tag">{{ article.tag }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p class="empty">Coming soon.</p>
+    {% endif %}
+  </div>

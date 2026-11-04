@@ -1,0 +1,22 @@
+---
+layout: default
+---
+  <div class="card article-card">
+    <a href="{{ '/writing/' | relative_url }}" class="back"><span class="arrow" aria-hidden="true">←</span> Writing</a>
+
+    {%- if page.hero %}
+    <div class="article-hero">
+      <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt }}" />
+    </div>
+    {%- endif %}
+
+    <div class="article-meta">
+      <p class="article-date">{{ page.date_display }}</p>
+      <h1 class="article-title">{{ page.title }}</h1>
+      <span class="article-tag">{{ page.tag }}</span>
+    </div>
+
+    <div class="article-body">
+      {{ content }}
+    </div>
+  </div>
