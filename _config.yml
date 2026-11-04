@@ -1,3 +1,5 @@
 title: Anthony Pernia
 url: https://anthonypernia.com
 permalink: pretty
+description: "Anthony Pernia, data platform engineer in Buenos Aires. I build data platforms and the pipelines that turn raw data into answers a team can act on."
+exclude: [writing, AGENTS.md, CLAUDE.md, articulos_test, README.md, COPY.md, "1_Articulo*.md", "*.pdf"]

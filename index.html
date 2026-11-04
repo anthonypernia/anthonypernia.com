@@ -1,56 +1,27 @@
 ---
+layout: default
+title: "Anthony Pernia"
 ---
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anthony Pernia</title>
-  <meta name="description" content="Anthony Pernia — Data Platform Engineer · Technical Referent. Where data architecture gets complex. That's my territory." />
-  <link rel="canonical" href="https://anthonypernia.com/" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta property="og:title" content="Anthony Pernia" />
-  <meta property="og:description" content="Anthony Pernia — Data Platform Engineer · Technical Referent. Where data architecture gets complex. That's my territory." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://anthonypernia.com/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-
-  <div class="card">
+<div class="card home">
     <h1 class="name">Anthony Pernia</h1>
     <p class="role">
-      <span class="part">Data Platform Engineer</span><span class="sep"> · </span><span class="part">Technical Referent</span>
+      <span>Data Platform Engineer</span>
     </p>
 
-    <p class="statement">
-      Where data architecture gets complex.<br>
-      That's my territory.
+    <p class="statement">Building data platforms at scale.</p>
+
+    <p class="about">
+      Data is only worth what it changes. I&rsquo;ve built and maintained hundreds of pipelines that turn raw data into answers a team can act&nbsp;on.
     </p>
 
-    <nav aria-label="Primary links">
-      <a href="https://www.linkedin.com/in/anthonypernia/" target="_blank" rel="noopener noreferrer">
-        <span class="label">LinkedIn</span> <span class="arrow">↗</span>
-      </a>
-      <a href="https://github.com/anthonypernia" target="_blank" rel="noopener noreferrer">
-        <span class="label">GitHub</span> <span class="arrow">↗</span>
-      </a>
-      <a href="#" id="email-link">
-        <span class="label" id="email-label">Email</span> <span class="arrow">↗</span>
-      </a>
-      <a href="https://x.com/AnthonyPerniaH" target="_blank" rel="noopener noreferrer">
-        <span class="label">Twitter / X</span> <span class="arrow">↗</span>
-      </a>
-      <a href="/writing/">
-        <span class="label">Writing</span> <span class="arrow">↗</span>
-      </a>
+    {%- assign articles = site.pages | where: "section", "writing" | sort: "date" | reverse %}
+    <nav class="elsewhere" aria-label="Elsewhere">
+      {%- if articles.size > 0 %}
+      <a href="{{ '/writing/' | relative_url }}">Writing<span aria-hidden="true">→</span></a>
+      {%- endif %}
+      <a href="https://www.linkedin.com/in/anthonypernia/" target="_blank" rel="noopener noreferrer">LinkedIn<span aria-hidden="true">↗</span></a>
+      <a href="https://github.com/anthonypernia" target="_blank" rel="noopener noreferrer">GitHub<span aria-hidden="true">↗</span></a>
+      <a href="#" id="email-link"><span id="email-label">Email</span><span aria-hidden="true">↗</span></a>
+      <a href="https://x.com/AnthonyPerniaH" target="_blank" rel="noopener noreferrer">X<span aria-hidden="true">↗</span></a>
     </nav>
   </div>
-
-  <footer>© <span id="footer-year"></span> Anthony Pernia</footer>
-
-  <script src="script.js"></script>
-</body>
-</html>

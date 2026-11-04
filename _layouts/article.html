@@ -1,29 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }} — Anthony Pernia</title>
-  <meta name="description" content="{{ page.description }}" />
-  <link rel="canonical" href="{{ page.url | prepend: site.url }}" />
-  <meta property="og:title" content="{{ page.title }} — Anthony Pernia" />
-  <meta property="og:description" content="{{ page.description }}" />
-  <meta property="og:type" content="article" />
-  <meta property="og:url" content="{{ page.url | prepend: site.url }}" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400&family=IBM+Plex+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
-  <link rel="stylesheet" href="/writing/article.css" />
-</head>
-<body>
+---
+layout: default
+---
+  <div class="card article-card">
+    <a href="{{ '/writing/' | relative_url }}" class="back"><span class="arrow" aria-hidden="true">←</span> Writing</a>
 
-  <div class="card">
-    <a href="/writing/" class="back"><span class="arrow">←</span> Writing</a>
-
+    {%- if page.hero %}
     <div class="article-hero">
-      <img src="{{ page.hero }}" alt="{{ page.hero_alt }}" />
+      <img src="{{ page.hero | relative_url }}" alt="{{ page.hero_alt }}" />
     </div>
+    {%- endif %}
 
     <div class="article-meta">
       <p class="article-date">{{ page.date_display }}</p>
@@ -35,9 +20,3 @@
       {{ content }}
     </div>
   </div>
-
-  <footer>© <span id="footer-year"></span> Anthony Pernia</footer>
-
-  <script src="/script.js"></script>
-</body>
-</html>
